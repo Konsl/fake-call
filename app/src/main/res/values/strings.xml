@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Fake Call</string>
+    <string name="timer">Timer</string>
+    <string-array name="timer_lengths">
+        <item>Now</item>
+        <item>5 Seconds</item>
+        <item>10 Seconds</item>
+        <item>15 Seconds</item>
+        <item>30 Seconds</item>
+        <item>1 Minute</item>
+    </string-array>
+</resources>
