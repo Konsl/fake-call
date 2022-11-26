@@ -11,6 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
+import com.konsl.fakecall.history.AppDatabase;
+import com.konsl.fakecall.history.HistoryEntry;
+
+import java.time.LocalDateTime;
+
 public class StartCallWorker extends Worker {
     public static final String INPUT_PHONE_NUMBER = "INPUT_PHONE_NUMBER";
 
@@ -31,6 +36,13 @@ public class StartCallWorker extends Worker {
         extras.putParcelable(TelecomManager.EXTRA_INCOMING_CALL_ADDRESS, uri);
 
         telecomManager.addNewIncomingCall(phoneAccountHandle, extras);
+
+        HistoryEntry historyEntry = new HistoryEntry();
+        historyEntry.phoneNumber = phoneNumber;
+        historyEntry.time = LocalDateTime.now();
+
+        AppDatabase.getDatabase(getApplicationContext())
+                .historyDao().append(historyEntry);
 
         return Result.success();
     }

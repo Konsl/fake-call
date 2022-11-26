@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.MANAGE_OWN_CALLS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="false"
@@ -49,11 +50,13 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.SEARCH" />
+                <!--<action android:name="android.intent.action.SEARCH" />-->
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".SettingsActivity" />
 
         <service
             android:name="com.konsl.fakecall.FakeConnectionService"

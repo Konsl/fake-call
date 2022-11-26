@@ -2,6 +2,16 @@
 <resources>
     <string name="app_name">Fake Call</string>
     <string name="timer">Timer</string>
+    <string name="view_contact_photos">Fotos von Kontakten anzeigen</string>
+    <string name="settings">Einstellungen</string>
+    <string name="message_read_contacts_failed">Um Kontaktfotos anzuzeigen, muss diese App die auf diesem Gerät gespeicherten Kontakte lesen können.</string>
+    <string name="clear_call_history">Anrufliste löschen</string>
+    <string name="history_show_duplicates_title">Telefonnummern mehrfach anzeigen</string>
+    <string name="history_show_duplicates_summary">Dieselbe Telefonnummer kann in der Anrufliste mehrfach angezeigt werden</string>
+    <string name="fake_call_settings">Fake Call-Einstellungen</string>
+    <string name="pick_contact">Kontakt auswählen</string>
+    <string name="input_phone_number">Telefonnummer eingeben</string>
+    <string name="phone_number">Telefonnummer</string>
     <string-array name="timer_lengths">
         <item>Jetzt</item>
         <item>5 Sekunden</item>

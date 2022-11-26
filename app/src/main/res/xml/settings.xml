@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+    <SwitchPreferenceCompat
+        app:key="history_show_duplicates"
+        app:summary="@string/history_show_duplicates_summary"
+        app:title="@string/history_show_duplicates_title" />
+</PreferenceScreen>

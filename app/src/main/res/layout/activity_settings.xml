@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dev.oneuiproject.oneui.layout.ToolbarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:title="@string/fake_call_settings">
+
+    <FrameLayout
+        android:id="@+id/settings_fragment_host"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</dev.oneuiproject.oneui.layout.ToolbarLayout>

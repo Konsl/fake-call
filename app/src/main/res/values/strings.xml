@@ -1,6 +1,17 @@
 <resources>
     <string name="app_name">Fake Call</string>
     <string name="timer">Timer</string>
+    <string name="contact_icon" translatable="false">contact icon</string>
+    <string name="view_contact_photos">View contact photos</string>
+    <string name="settings">Settings</string>
+    <string name="message_read_contacts_failed">To show contact photos this app needs to be able to read the contacts stored on this device.</string>
+    <string name="clear_call_history">Clear call history</string>
+    <string name="history_show_duplicates_title">Show phone number duplicates</string>
+    <string name="history_show_duplicates_summary">Allow the same phone number to be shown multiple times in call history</string>
+    <string name="fake_call_settings">Fake Call settings</string>
+    <string name="pick_contact">Pick contact</string>
+    <string name="input_phone_number">Input phone number</string>
+    <string name="phone_number">Phone number</string>
     <string-array name="timer_lengths">
         <item>Now</item>
         <item>5 Seconds</item>

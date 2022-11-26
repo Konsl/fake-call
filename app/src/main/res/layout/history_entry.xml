@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/listChoiceBackgroundIndicator"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+    android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+    tools:viewBindingIgnore="true"
+    android:baselineAligned="false">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="start|center"
+        android:paddingEnd="18dp"
+        tools:ignore="RtlSymmetry">
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/history_contact_icon"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center"
+            android:layout_marginVertical="8dp"
+            android:contentDescription="@string/contact_icon"
+            android:scaleType="fitXY"
+            app:roundPercent="1" />
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp">
+
+        <TextView
+            android:id="@+id/history_text_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="5"
+            android:textAlignment="viewStart"
+            android:textAppearance="?textAppearanceListItem" />
+
+        <TextView
+            android:id="@+id/history_text_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/history_text_top"
+            android:layout_alignStart="@id/history_text_top"
+            android:ellipsize="end"
+            android:maxLines="10"
+            android:textAlignment="viewStart"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </RelativeLayout>
+
+</LinearLayout>
