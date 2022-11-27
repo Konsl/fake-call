@@ -8,6 +8,8 @@ import android.telecom.PhoneAccount;
 import android.telecom.PhoneAccountHandle;
 import android.telecom.TelecomManager;
 
+import com.konsl.fakecall.call.FakeConnectionService;
+
 public class MainApplication extends Application {
 
     private static PhoneAccountHandle phoneAccountHandle = null;

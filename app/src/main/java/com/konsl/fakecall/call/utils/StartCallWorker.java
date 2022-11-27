@@ -1,4 +1,4 @@
-package com.konsl.fakecall;
+package com.konsl.fakecall.call.utils;
 
 import android.content.Context;
 import android.net.Uri;
@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
+import com.konsl.fakecall.MainApplication;
 import com.konsl.fakecall.history.AppDatabase;
 import com.konsl.fakecall.history.HistoryEntry;
 

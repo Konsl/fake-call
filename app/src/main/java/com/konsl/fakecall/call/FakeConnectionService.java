@@ -1,6 +1,5 @@
-package com.konsl.fakecall;
+package com.konsl.fakecall.call;
 
-import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;

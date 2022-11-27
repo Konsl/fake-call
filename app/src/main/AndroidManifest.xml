@@ -56,10 +56,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SettingsActivity" />
+        <activity android:name=".settings.SettingsActivity" />
 
         <service
-            android:name="com.konsl.fakecall.FakeConnectionService"
+            android:name="com.konsl.fakecall.call.FakeConnectionService"
             android:exported="true"
             android:permission="android.permission.BIND_TELECOM_CONNECTION_SERVICE">
             <intent-filter>

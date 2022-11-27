@@ -1,4 +1,4 @@
-package com.konsl.fakecall;
+package com.konsl.fakecall.call.utils;
 
 import java.time.Duration;
 

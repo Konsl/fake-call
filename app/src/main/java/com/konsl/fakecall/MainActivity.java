@@ -22,7 +22,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -47,9 +46,12 @@ import androidx.work.Data;
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
 
+import com.konsl.fakecall.call.utils.Interval;
+import com.konsl.fakecall.call.utils.StartCallWorker;
 import com.konsl.fakecall.databinding.ActivityMainBinding;
 import com.konsl.fakecall.history.AppDatabase;
 import com.konsl.fakecall.history.HistoryEntry;
+import com.konsl.fakecall.settings.SettingsActivity;
 
 import java.time.Duration;
 import java.util.ArrayList;

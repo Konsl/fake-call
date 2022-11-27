@@ -1,10 +1,11 @@
-package com.konsl.fakecall;
+package com.konsl.fakecall.settings;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.konsl.fakecall.R;
 import com.konsl.fakecall.databinding.ActivitySettingsBinding;
 
 public class SettingsActivity extends AppCompatActivity {
