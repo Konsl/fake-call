@@ -12,6 +12,14 @@
     <string name="pick_contact">Pick contact</string>
     <string name="input_phone_number">Input phone number</string>
     <string name="phone_number">Phone number</string>
+    <string name="open_source_licenses">Open source licenses</string>
+    <string name="github" translatable="false">GitHub</string>
+    <string name="apache20Text" translatable="false">Apache License 2.0</string>
+    <string name="apache20Libs" translatable="false">androidx • material-components</string>
+    <string name="mitText" translatable="false">MIT License</string>
+    <string name="mitLibs" translatable="false">oneui-core • oneui-design</string>
+    <string name="about_fake_call">About Fake Call</string>
+    <string name="github_repo" translatable="false">Konsl/fake-call</string>
     <string-array name="timer_lengths">
         <item>Now</item>
         <item>5 Seconds</item>

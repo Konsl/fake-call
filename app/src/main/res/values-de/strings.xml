@@ -12,6 +12,8 @@
     <string name="pick_contact">Kontakt auswählen</string>
     <string name="input_phone_number">Telefonnummer eingeben</string>
     <string name="phone_number">Telefonnummer</string>
+    <string name="open_source_licenses">Open Source-Lizenzen</string>
+    <string name="about_fake_call">Info zu Fake Call</string>
     <string-array name="timer_lengths">
         <item>Jetzt</item>
         <item>5 Sekunden</item>
