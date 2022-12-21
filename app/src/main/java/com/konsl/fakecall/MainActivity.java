@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int PERMISSION_READ_CONTACTS_REQUEST_CODE = 1000001;
 
     ActivityMainBinding binding;
+    Menu optionsMenu;
     IndexAdapter adapter;
 
     LiveData<List<HistoryEntry>> entriesLifeData;
@@ -120,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED)
             menu.findItem(R.id.menu_main_enable_pictures).setVisible(false);
 
+        optionsMenu = menu;
         return true;
     }
 
@@ -144,8 +146,10 @@ public class MainActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        if (requestCode == PERMISSION_READ_CONTACTS_REQUEST_CODE && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+        if (requestCode == PERMISSION_READ_CONTACTS_REQUEST_CODE && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            optionsMenu.findItem(R.id.menu_main_enable_pictures).setVisible(false);
             adapter.notifyItemRangeChanged(0, adapter.getItemCount());
+        }
         if (requestCode == PERMISSION_READ_CONTACTS_REQUEST_CODE && grantResults[0] == PackageManager.PERMISSION_DENIED) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage(R.string.message_read_contacts_failed);
