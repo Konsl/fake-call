@@ -4,6 +4,7 @@
     <PreferenceCategory>
 
         <SwitchPreferenceCompat
+            android:defaultValue="false"
             android:key="history_show_duplicates"
             android:summary="@string/history_show_duplicates_summary"
             android:title="@string/history_show_duplicates_title" />

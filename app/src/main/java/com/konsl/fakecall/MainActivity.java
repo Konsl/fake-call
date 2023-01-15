@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
         if (entriesLifeData != null)
             entriesLifeData.removeObservers(this);
 
-        if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("history_show_duplicates", true))
+        if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("history_show_duplicates", false))
             entriesLifeData = AppDatabase.getDatabase(this)
                     .historyDao().getAllLive();
         else
