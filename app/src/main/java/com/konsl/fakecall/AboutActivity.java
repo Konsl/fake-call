@@ -21,7 +21,7 @@ public class AboutActivity extends AppCompatActivity {
     }
 
     private void doUpdateCheck() {
-
+        // https://api.github.com/repos/Konsl/youtube-pitch-control/releases
     }
 
     public void showOpenSourceLicenses(View v) {
