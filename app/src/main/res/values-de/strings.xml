@@ -14,6 +14,8 @@
     <string name="phone_number">Telefonnummer</string>
     <string name="open_source_licenses">Open Source-Lizenzen</string>
     <string name="about_fake_call">Info zu Fake Call</string>
+    <string name="title_phone_account_disabled">Anrufkonto deaktiviert</string>
+    <string name="message_phone_account_disabled">Um diese Funktion zu verwenden, muss das Anrufkonto dieser App zuerst im Einstellungs-Menü der Telefon-App aktiviert werden.</string>
     <string-array name="timer_lengths">
         <item>Jetzt</item>
         <item>5 Sekunden</item>

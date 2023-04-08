@@ -219,6 +219,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startCall(String phoneNumber, Duration delay) {
+        if (!MainApplication.getTelecomManager(this)
+                .getPhoneAccount(MainApplication.getPhoneAccountHandle(this))
+                .isEnabled()) {
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.title_phone_account_disabled)
+                    .setMessage(R.string.message_phone_account_disabled)
+                    .show();
+
+            return;
+        }
+
         WorkManager.getInstance(this).enqueue(
                 new OneTimeWorkRequest.Builder(StartCallWorker.class)
                         .setInitialDelay(delay)
