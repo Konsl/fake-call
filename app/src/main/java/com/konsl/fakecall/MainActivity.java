@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Canvas;
@@ -135,6 +136,8 @@ public class MainActivity extends AppCompatActivity {
                     PERMISSION_READ_CONTACTS_REQUEST_CODE);
         } else if (itemId == R.id.menu_main_clear_history) {
             AppDatabase.getDatabase(this).historyDao().clear();
+        } else if (itemId == R.id.menu_main_help) {
+            showHelp();
         } else if (itemId == R.id.menu_main_settings) {
             settingsActivityCallback.launch(new Intent(this, SettingsActivity.class));
         }
@@ -219,15 +222,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startCall(String phoneNumber, Duration delay) {
-        if (!MainApplication.getTelecomManager(this)
-                .getPhoneAccount(MainApplication.getPhoneAccountHandle(this))
-                .isEnabled()) {
-            new AlertDialog.Builder(this)
-                    .setTitle(R.string.title_phone_account_disabled)
-                    .setMessage(R.string.message_phone_account_disabled)
-                    .show();
+        if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("is_first_run", true)) {
+            SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(this).edit();
+            editor.putBoolean("is_first_run", false);
+            editor.apply();
 
-            return;
+            showHelp();
         }
 
         WorkManager.getInstance(this).enqueue(
@@ -264,6 +264,13 @@ public class MainActivity extends AppCompatActivity {
 
         Uri person = ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI, contactId);
         return Uri.withAppendedPath(person, ContactsContract.Contacts.Photo.CONTENT_DIRECTORY);
+    }
+
+    private void showHelp() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.title_phone_account_disabled)
+                .setMessage(R.string.message_phone_account_disabled)
+                .show();
     }
 
     public class IndexAdapter extends ListAdapter<HistoryEntry, IndexAdapter.ViewHolder> {

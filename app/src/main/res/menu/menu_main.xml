@@ -15,6 +15,11 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/menu_main_help"
+        android:title="@string/help"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/menu_main_settings"
         android:title="@string/settings"
         app:showAsAction="never" />
