@@ -58,7 +58,6 @@ dependencies {
     implementation 'io.github.oneuiproject:design:1.2.1'
     implementation 'io.github.oneuiproject:icons:1.0.1'
 
-    implementation "androidx.work:work-runtime:2.7.1"
     implementation "androidx.room:room-runtime:2.4.3"
     annotationProcessor "androidx.room:room-compiler:2.4.3"
 

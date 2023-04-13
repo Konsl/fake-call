@@ -1,6 +1,8 @@
 package com.konsl.fakecall;
 
 import android.Manifest;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +12,7 @@ import android.database.Cursor;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.telephony.PhoneNumberFormattingTextWatcher;
@@ -43,12 +46,9 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.work.Data;
-import androidx.work.OneTimeWorkRequest;
-import androidx.work.WorkManager;
 
 import com.konsl.fakecall.call.utils.Interval;
-import com.konsl.fakecall.call.utils.StartCallWorker;
+import com.konsl.fakecall.call.utils.StartCallReceiver;
 import com.konsl.fakecall.databinding.ActivityMainBinding;
 import com.konsl.fakecall.history.AppDatabase;
 import com.konsl.fakecall.history.HistoryEntry;
@@ -56,6 +56,7 @@ import com.konsl.fakecall.settings.SettingsActivity;
 
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -230,13 +231,19 @@ public class MainActivity extends AppCompatActivity {
             showHelp();
         }
 
-        WorkManager.getInstance(this).enqueue(
-                new OneTimeWorkRequest.Builder(StartCallWorker.class)
-                        .setInitialDelay(delay)
-                        .setInputData(new Data.Builder()
-                                .putString(StartCallWorker.INPUT_PHONE_NUMBER, phoneNumber)
-                                .build())
-                        .build());
+        AlarmManager alarmManager = getSystemService(AlarmManager.class);
+
+        Intent i = new Intent(this, StartCallReceiver.class);
+        i.putExtra(StartCallReceiver.INPUT_PHONE_NUMBER, phoneNumber);
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, i, PendingIntent.FLAG_IMMUTABLE);
+
+        long endTimeMillis = Calendar.getInstance().getTimeInMillis() + delay.toMillis();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && alarmManager.canScheduleExactAlarms())
+            alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, endTimeMillis, pendingIntent);
+        else
+            alarmManager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, endTimeMillis, pendingIntent);
     }
 
     public Uri getPhotoUri(long contactId) {
