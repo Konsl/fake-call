@@ -20,8 +20,8 @@
     <string name="mitLibs" translatable="false">oneui-core • oneui-design</string>
     <string name="about_fake_call">About Fake Call</string>
     <string name="github_repo" translatable="false">Konsl/fake-call</string>
-    <string name="title_phone_account_disabled">Phone account might be disabled</string>
-    <string name="message_phone_account_disabled">To use this app you might have to first enable the corresponding phone account in your phone app.</string>
+    <string name="title_phone_account_disabled">Calling account might be disabled</string>
+    <string name="message_phone_account_disabled">To use this app you might have to first enable the corresponding calling account in your phone app.</string>
     <string name="help">Help</string>
     <string-array name="timer_lengths">
         <item>Now</item>
